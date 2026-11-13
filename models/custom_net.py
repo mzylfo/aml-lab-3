@@ -3,7 +3,7 @@ from torch import nn
 
 # Define the custom neural network
 class CustomNet(nn.Module):
-    def __init__(self):
+    def __init__(self, num_classes=200):
         super(CustomNet, self).__init__()
 
         # --- Blocco 1: da 3 canali a 64 ---
@@ -25,7 +25,7 @@ class CustomNet(nn.Module):
         self.gap = nn.AdaptiveAvgPool2d((1, 1))
 
         # Classificatore finale su 200 classi (TinyImageNet)
-        self.fc1 = nn.Linear(256, 200)
+        self.fc1 = nn.Linear(256, num_classes)
 
     def forward(self, x):
         # B x 3 x 224 x 224
