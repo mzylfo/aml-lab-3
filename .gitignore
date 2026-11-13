@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Project specific ignores
+data/*
+!data/.gitkeep
+checkpoints/*.pth
+checkpoints/*.pt
+wandb/
+.DS_Store
